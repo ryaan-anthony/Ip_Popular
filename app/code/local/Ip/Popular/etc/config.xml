@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+
+    <modules>
+        <Ip_Popular>
+            <version>0.1.0</version>
+        </Ip_Popular>
+    </modules>
+
+    <global>
+
+        <blocks>
+            <popular>
+                <class>Ip_Popular_Block</class>
+            </popular>
+        </blocks>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <popular>
+                    <file>popular.xml</file>
+                </popular>
+            </updates>
+        </layout>
+    </frontend>
+
+</config>

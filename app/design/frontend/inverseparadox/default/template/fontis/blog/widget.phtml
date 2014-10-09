@@ -1,0 +1,25 @@
+<?php
+/**
+ * @var $this Fontis_Blog_Block_Blog
+ */
+?>
+<?php
+$posts = $this->getPosts();
+$_helper = Mage::helper("blog");
+?>
+<div class="pat"></div>
+<h2><span>News</span></h2>
+
+<?php foreach ($posts as $post): ?>
+    <div class="post-wrap">
+        <?php if($post->getImage()):?>
+        <div class="post-image">
+            <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$post->getImage();?>" />
+        </div>
+        <?php endif;?>
+        <div class="post-content">
+            <h3><a href="<?php echo $post->getAddress(); ?>"><?php echo $post->getTitle(); ?></a></h3>
+            <p><?php echo $post->getPostContent(); ?> <a href="<?php echo $post->getAddress(); ?>" class="more">Read More</a></p>
+        </div>
+    </div><!--END post-wrap-->
+<?php endforeach; ?>

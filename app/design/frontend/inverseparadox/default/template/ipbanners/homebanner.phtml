@@ -1,0 +1,35 @@
+<?php
+if ($this->hasValidGroup()):
+    $count = 0;
+    $max = $this->getGroup()->getBannerCount();
+    $style = array();
+    $medstyle = array();
+    $smallstyle = array();
+?>
+
+<div class="banner"><div class="banner-nav"></div>
+    <div class="banner-slides">
+    
+        <?php foreach($this->getBanners() as $banner):?>
+            
+            <div class="banner-slide">
+                <?php if($banner->getUrl() && $banner->getUrl()!=''): ?>
+                <a href="<?php echo $banner->getUrl(); ?>">
+                <?php endif; ?>
+                <div class="banner-image" style="background-image: url(<?php echo $banner->getImageUrl();?>);"></div>
+                <?php if($banner->getUrl() && $banner->getUrl()!=''): ?>
+                </a>
+                <?php endif; ?>
+                    
+                <div class="banner-text">
+                    <?php echo $banner->getHtml();?>
+                </div>
+            </div>
+            
+        
+        <?php endforeach;?>
+        
+    </div>
+</div>
+
+<?php endif; ?>

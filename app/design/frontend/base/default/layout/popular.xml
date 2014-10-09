@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout>
+
+    <default>
+        <reference name="root">
+            <block type="popular/product_list" name="popular.products" template="popular/product/list.phtml"/>
+        </reference>
+    </default>
+
+</layout>
